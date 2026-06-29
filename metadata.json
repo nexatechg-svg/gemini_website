@@ -1,0 +1,6 @@
+{
+  "name": "Gemini Nexatech",
+  "description": "Optimized corporate web experience for Gemini Nexatech with top-tier asset loading speeds, custom caching mechanisms, and lazy-loaded structures.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

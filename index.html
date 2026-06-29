@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <script>
+    // Global script error shield for sandboxed iFrame environments
+    window.onerror = function (message, url, line, column, error) {
+      if (message === 'Script error.' || (message && message.toString().toLowerCase().includes('script error'))) {
+        console.warn('Captured cross-origin script error in sandbox environment:', message, url);
+        return true; // Suppress error propagation
+      }
+      return false;
+    };
+
+    window.addEventListener('unhandledrejection', function (event) {
+      if (event.reason && (event.reason.message === 'Script error.' || String(event.reason).toLowerCase().includes('script error'))) {
+        console.warn('Captured unhandled rejection script error:', event.reason);
+        event.preventDefault(); // Suppress unhandled rejection
+      }
+    });
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KZHF8MQ4');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-46XD2N0Z1T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-46XD2N0Z1T');
+  </script>
+
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+  
+  <!-- Primary Meta Tags -->
+  <title>Gemini Nexatech - Where Ideas Meet Innovation</title>
+  <meta name="title" content="Gemini Nexatech - Where Ideas Meet Innovation" />
+  <meta name="description" content="Gemini Nexatech is a leading provider of innovative digital solutions, specialized engineering, and technical consultancy services. Transforming ideas into reality." />
+  <meta name="keywords" content="Gemini Nexatech, engineering, innovation, digital solutions, technical consultancy, tech services" />
+  <meta name="author" content="Gemini Nexatech" />
+
+  <!-- Google Search Console Verification -->
+  <meta name="google-site-verification" content="K91ZsCUTTd26d8pWyFcYVAhla_VNJJ1PJpN1wqD8hzE" />
+
+  <!-- Organization Schema Markup -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Gemini Nexatech",
+      "url": "https://gemininexatech.com",
+      "logo": "https://gemininexatech.com/favicon.png",
+      "description": "Leading provider of innovative digital solutions, specialized engineering, and technical consultancy services.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Chennai",
+        "addressRegion": "Tamil Nadu",
+        "postalCode": "600096",
+        "addressCountry": "IN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-XXXXXXXXXX",
+        "contactType": "customer service"
+      },
+      "sameAs": [
+        "https://in.linkedin.com/company/gemini-nexatech-5747153b3"
+      ]
+    }
+  </script>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gemininexatech.com/" />
+  <meta property="og:title" content="Gemini Nexatech - Where Ideas Meet Innovation" />
+  <meta property="og:description" content="Gemini Nexatech is a leading provider of innovative digital solutions, specialized engineering, and technical consultancy services." />
+  <meta property="og:image" content="/og-image.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://gemininexatech.com/" />
+  <meta property="twitter:title" content="Gemini Nexatech - Where Ideas Meet Innovation" />
+  <meta property="twitter:description" content="Gemini Nexatech is a leading provider of innovative digital solutions, specialized engineering, and technical consultancy services." />
+  <meta property="twitter:image" content="/og-image.png" />
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZHF8MQ4"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>
