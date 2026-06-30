@@ -1,6 +1,6 @@
 # Gemini Nexatech Website
 
-![Gemini Nexatech Logo](public/logo.png)
+![Gemini Nexatech Logo]
 
 ## 🚀 Where Ideas Meet Innovation
 
