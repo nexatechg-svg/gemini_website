@@ -1,20 +1,80 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Gemini Nexatech Website
 
-# Run and deploy your AI Studio app
+![Gemini Nexatech Logo](public/logo.png)
 
-This contains everything you need to run your app locally.
+## 🚀 Where Ideas Meet Innovation
 
-View your app in AI Studio: https://ai.studio/apps/3ff3a278-ba1d-442f-b920-4e11ad96a949
+**Gemini Nexatech** is a premium, high-performance business website showcasing future-ready smart technology solutions. This project features immersive animations, a professional dark-themed aesthetic, and a fully responsive design tailored for the modern tech industry.
 
-## Run Locally
+---
 
-**Prerequisites:**  Node.js
+## ✨ Features
 
+- **Immersive Services Section**: Advanced GSAP scroll-triggered animations with localized focus on service details.
+- **Dynamic Navbar**: Transparent blurred glassmorphism effect with a liquid-hover indicator.
+- **Brand Synchronization**: Precise implementation of the Gemini Nexatech brand identity using specific color palettes:
+  - **Gemini Blue**: `#013299`
+  - **Gemini Orange**: `#FD8E18`
+- **Responsive Layout**: Pixel-perfect performance across mobile, tablet, and desktop devices.
+- **Smooth Navigation**: Optimized internal scrolling and section transitions using Framer Motion.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: [React 18](https://reactjs.org/)
+- **Bundler**: [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animations**: 
+  - [GSAP](https://greensock.com/gsap/) (ScrollTrigger, Flip, ScrollTo)
+  - [Framer Motion](https://www.framer.com/motion/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Icons**: [React Icons](https://react-icons.github.io/react-icons/)
+
+---
+
+## 📦 Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/rajesh-m98/gemini-nexatech-website.git
+   ```
+
+2. **Navigate to the directory**:
+   ```bash
+   cd gemini-nexatech-website
+   ```
+
+3. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+4. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
+
+5. **Build for production**:
+   ```bash
+   npm run build
+   ```
+
+---
+
+## 🌐 Deployment
+
+The project is optimized for deployment on **Vercel** with automatic CI/CD through GitHub.
+
+---
+
+## 📄 License
+
+This project is developed for Gemini Nexatech. All rights reserved.
