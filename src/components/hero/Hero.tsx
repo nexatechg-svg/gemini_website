@@ -62,13 +62,15 @@ const Hero = ({ onScheduleCall }: HeroProps) => {
           className="relative z-10 w-full px-6 sm:px-8 lg:px-12 xl:px-16 py-8"
         >
           <div className="text-center space-y-6 sm:space-y-8">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-black text-white leading-tight font-inter tracking-[0.3em] uppercase drop-shadow-2xl"
-            >
-              {heading}
-            </motion.h1>
+            <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-black text-white leading-tight font-inter tracking-[0.3em] uppercase drop-shadow-2xl">
+              <motion.span
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                style={{ display: "inline-block" }}
+              >
+                {heading}
+              </motion.span>
+            </h1>
 
             <div className="flex items-center justify-center">
               <AnimatedServices currentIndex={currentIndex} />

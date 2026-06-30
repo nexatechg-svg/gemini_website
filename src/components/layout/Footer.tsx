@@ -104,9 +104,9 @@ const Footer = () => {
                     : "lg:col-span-4"
               } space-y-2 items-start text-left`}
             >
-              <h4 className="text-white font-black uppercase tracking-widest text-sm border-l-4 border-gemini-orange pl-4 w-full">
+              <h3 className="text-white font-black uppercase tracking-widest text-sm border-l-4 border-gemini-orange pl-4 w-full">
                 {section.title}
-              </h4>
+              </h3>
               <div className="space-y-2 pt-2">
                 {section.links?.map((link, lIdx) => (
                   <li key={lIdx} className="list-none">
