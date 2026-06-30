@@ -27,9 +27,9 @@ const Navbar = () => {
   const isHome = location.pathname === "/";
   const navBg = isHome
     ? isScrolled
-      ? "bg-black/80 backdrop-blur-2xl border-white/5 shadow-2xl"
-      : "bg-transparent border-transparent"
-    : "bg-black/90 backdrop-blur-xl border-white/10";
+      ? "bg-black/80 backdrop-blur-2xl border-white/5 shadow-2xl h-16"
+      : "bg-transparent border-transparent h-16"
+    : "bg-black/90 backdrop-blur-xl border-white/10 h-16";
 
   const textColor = isHome && !isScrolled ? "text-white" : "text-white/90";
 
@@ -39,7 +39,9 @@ const Navbar = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${navBg}`}
     >
       <div className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div
+          className={`flex items-center justify-between transition-all duration-500 ${isScrolled ? "h-14 lg:h-16" : "h-16 lg:h-20"}`}
+        >
           <button
             onClick={scrollToTop}
             className="flex-shrink-0 flex items-center cursor-pointer transition-all"
@@ -47,10 +49,12 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Gemini Nexatech Logo"
-              className="h-10 sm:h-11 lg:h-12 w-auto"
+              className={`w-auto transition-all duration-500 ${isScrolled ? "h-8 sm:h-9 lg:h-10" : "h-10 sm:h-11 lg:h-12"}`}
             />
             <div className="flex flex-col items-start justify-center ml-2">
-              <span className="text-base sm:text-xl lg:text-2xl font-black leading-none tracking-tight">
+              <span
+                className={`font-black leading-none tracking-tight transition-all duration-500 ${isScrolled ? "text-sm sm:text-lg lg:text-xl" : "text-base sm:text-xl lg:text-2xl"}`}
+              >
                 <span
                   className={`${isHome && !isScrolled ? "text-white" : "text-gemini-blue"} transition-colors duration-500`}
                 >
