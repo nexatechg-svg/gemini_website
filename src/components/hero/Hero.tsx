@@ -48,6 +48,8 @@ const Hero = ({ onScheduleCall }: HeroProps) => {
               style={{ originX: "50%", originY: "50%" }}
               loading="eager"
               fetchPriority="high"
+              width="1920"
+              height="1080"
             />
           </AnimatePresence>
           {/* Enhanced Overlay for better text readability */}
@@ -126,6 +128,8 @@ const Hero = ({ onScheduleCall }: HeroProps) => {
                       alt={logo.name}
                       className="w-full h-full object-contain scale-105 filter grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-115 mix-blend-multiply brightness-[1.1] contrast-[1.3]"
                       loading="lazy"
+                      width="200"
+                      height="100"
                     />
                   </div>
                 ))}

@@ -2,23 +2,11 @@
 <html lang="en">
 
 <head>
-  <script>
-    // Global script error shield for sandboxed iFrame environments
-    window.onerror = function (message, url, line, column, error) {
-      if (message === 'Script error.' || (message && message.toString().toLowerCase().includes('script error'))) {
-        console.warn('Captured cross-origin script error in sandbox environment:', message, url);
-        return true; // Suppress error propagation
-      }
-      return false;
-    };
+  <script>window.onerror=function(e,r,n,o,t){return("Script error."===e||(e&&e.toString().toLowerCase().includes("script error")))&&(console.warn("Captured cross-origin script error in sandbox environment:",e,r),!0)};window.addEventListener("unhandledrejection",function(e){e.reason&&("Script error."===e.reason.message||String(e.reason).toLowerCase().includes("script error"))&&(console.warn("Captured unhandled rejection script error:",e.reason),e.preventDefault())});</script>
 
-    window.addEventListener('unhandledrejection', function (event) {
-      if (event.reason && (event.reason.message === 'Script error.' || String(event.reason).toLowerCase().includes('script error'))) {
-        console.warn('Captured unhandled rejection script error:', event.reason);
-        event.preventDefault(); // Suppress unhandled rejection
-      }
-    });
-  </script>
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <link rel="preconnect" href="https://www.google-analytics.com" />
+  <link rel="preload" as="image" href="/src/assets/hero_section_image.jpg" fetchpriority="high" />
 
   <!-- Google Tag Manager -->
   <script>
@@ -45,8 +33,9 @@
   
   <!-- Primary Meta Tags -->
   <title>Gemini Nexatech - Where Ideas Meet Innovation</title>
+  <link rel="canonical" href="https://gemininexatech.com/" />
   <meta name="title" content="Gemini Nexatech - Where Ideas Meet Innovation" />
-  <meta name="description" content="Gemini Nexatech is a leading provider of innovative digital solutions, specialized engineering, and technical consultancy services. Transforming ideas into reality." />
+  <meta name="description" content="Gemini Nexatech is a leading provider of innovative digital solutions, specialized engineering, and technical consultancy." />
   <meta name="keywords" content="Gemini Nexatech, engineering, innovation, digital solutions, technical consultancy, tech services" />
   <meta name="author" content="Gemini Nexatech" />
 
@@ -100,7 +89,21 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZHF8MQ4"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <div id="root"></div>
+  <div id="root">
+    <!-- SEO Fallback Content -->
+    <h1 style="display:none; visibility:hidden;">Gemini Nexatech - Where Ideas Meet Innovation</h1>
+    <div style="display:none; visibility:hidden;">
+      <p>Gemini Nexatech is a leading provider of innovative digital solutions, specialized engineering, and technical consultancy services. We transform complex business challenges into seamless digital reality through high-end engineering and strategic design.</p>
+      <p>Our core services include digital transformation, UI/UX design, custom software development, mobile application development, cloud solutions, and enterprise engineering. We cater to various industries offering cutting edge technical solutions and digital transformation. We prioritize customer success and deliver world-class digital experiences.</p>
+      <p>Connect with us on our social platforms:</p>
+      <ul>
+        <li><a href="https://www.linkedin.com/company/gemininexatech" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://x.com/gemininexatech" rel="noopener noreferrer">Twitter (X)</a></li>
+        <li><a href="https://www.facebook.com/gemininexatech" rel="noopener noreferrer">Facebook</a></li>
+        <li><a href="https://www.instagram.com/gemininexatech" rel="noopener noreferrer">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
   <script type="module" src="/src/main.tsx"></script>
 </body>
 

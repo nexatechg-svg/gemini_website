@@ -155,6 +155,7 @@ const Footer = () => {
                         className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/40 hover:text-[var(--hover-color)] hover:bg-white/10 hover:border-[var(--hover-color)]/30 transition-all group"
                       >
                         <social.icon className="text-xl group-hover:scale-110 transition-transform" />
+                        <span className="sr-only">{social.label}</span>
                       </a>
                     ))}
                   </div>
@@ -283,6 +284,7 @@ const Footer = () => {
                                   className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/40 active:text-[var(--hover-color)] active:bg-white/10 transition-all"
                                 >
                                   <social.icon className="text-lg" />
+                                  <span className="sr-only">{social.label}</span>
                                 </a>
                               ))}
                             </div>
