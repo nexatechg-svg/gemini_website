@@ -1,1 +1,492 @@
 @import "tailwindcss";
+
+@utility custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-gemini-blue);
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gemini-orange);
+  }
+}
+
+@theme {
+  --color-gemini-blue: #013299;
+  /* Darker blue */
+  --color-gemini-orange: #fd8e18;
+  /* Darker orange */
+  --color-gemini-blue-dark: #001a4d;
+  --color-gemini-orange-dark: #a35a0d;
+
+  /* Premium Animations */
+  --animate-ring: phone-ring 0.8s ease-in-out infinite;
+  --animate-play-pulse: simple-pulse 1.2s ease-in-out infinite;
+  --animate-float: float 3s ease-in-out infinite;
+  --animate-glow-line: glow-line 4s linear infinite;
+  --animate-scanner: scanner 3s ease-in-out infinite;
+}
+
+@keyframes phone-ring {
+  0%,
+  100% {
+    transform: rotate(0) scale(1);
+  }
+
+  20% {
+    transform: rotate(-15deg) scale(1.1);
+  }
+
+  40% {
+    transform: rotate(15deg) scale(1.1);
+  }
+
+  60% {
+    transform: rotate(-15deg) scale(1.1);
+  }
+
+  80% {
+    transform: rotate(15deg) scale(1.1);
+  }
+}
+
+@keyframes simple-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.3);
+    opacity: 0.8;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Smooth scroll behavior and full width */
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Offset for fixed navbar so sections don't hide under it */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+/* Dark navy background for entire website */
+body {
+  background: linear-gradient(135deg, #011c3d 0%, #000a16 50%, #000510 100%);
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Vertical writing mode for sidebar button */
+.writing-mode-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* Cyan/Blue ripple animation for WhatsApp - matching reference */
+@keyframes ripple-cyan {
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(34, 211, 238, 0.7),
+      0 0 0 0 rgba(34, 211, 238, 0.5),
+      0 0 0 0 rgba(34, 211, 238, 0.3);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 10px rgba(34, 211, 238, 0.3),
+      0 0 0 20px rgba(34, 211, 238, 0.2),
+      0 0 0 30px rgba(34, 211, 238, 0.1);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 20px rgba(34, 211, 238, 0),
+      0 0 0 40px rgba(34, 211, 238, 0),
+      0 0 0 60px rgba(34, 211, 238, 0);
+  }
+}
+
+.animate-ripple-cyan {
+  animation: ripple-cyan 2s ease-out infinite;
+}
+
+/* Orange ripple for Brochure - Matching brand orange */
+@keyframes ripple-orange {
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(253, 142, 24, 0.4),
+      0 0 0 0 rgba(253, 142, 24, 0.2);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 10px rgba(253, 142, 24, 0.2),
+      0 0 0 20px rgba(253, 142, 24, 0.1);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 20px rgba(253, 142, 24, 0),
+      0 0 0 40px rgba(253, 142, 24, 0);
+  }
+}
+
+.animate-ripple-orange {
+  animation: ripple-orange 2s ease-out infinite;
+}
+
+/* Minimal ripple for WhatsApp - reduced intensity */
+@keyframes ripple-cyan-minimal {
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(34, 211, 238, 0.4),
+      0 0 0 0 rgba(34, 211, 238, 0.2);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 8px rgba(34, 211, 238, 0.2),
+      0 0 0 15px rgba(34, 211, 238, 0.1);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 15px rgba(34, 211, 238, 0),
+      0 0 0 25px rgba(34, 211, 238, 0);
+  }
+}
+
+.animate-ripple-cyan-minimal {
+  animation: ripple-cyan-minimal 2s ease-out infinite;
+}
+
+/* Green ripple for WhatsApp - default WhatsApp color */
+@keyframes ripple-green {
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(37, 211, 102, 0.4),
+      0 0 0 0 rgba(37, 211, 102, 0.2);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 8px rgba(37, 211, 102, 0.2),
+      0 0 0 15px rgba(37, 211, 102, 0.1);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 15px rgba(37, 211, 102, 0),
+      0 0 0 25px rgba(37, 211, 102, 0);
+  }
+}
+
+.animate-ripple-green {
+  animation: ripple-green 2s ease-out infinite;
+}
+
+/* Logo scroll animation - Right to Left - SLOW */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Phone ring wave animation - 3 expanding circles */
+@keyframes ring-wave {
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(59, 130, 246, 0.7),
+      0 0 0 0 rgba(59, 130, 246, 0.7),
+      0 0 0 0 rgba(59, 130, 246, 0.7);
+  }
+
+  40% {
+    box-shadow:
+      0 0 0 10px rgba(59, 130, 246, 0),
+      0 0 0 0 rgba(59, 130, 246, 0.7),
+      0 0 0 0 rgba(59, 130, 246, 0.7);
+  }
+
+  80% {
+    box-shadow:
+      0 0 0 10px rgba(59, 130, 246, 0),
+      0 0 0 20px rgba(59, 130, 246, 0),
+      0 0 0 0 rgba(59, 130, 246, 0.7);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 10px rgba(59, 130, 246, 0),
+      0 0 0 20px rgba(59, 130, 246, 0),
+      0 0 0 30px rgba(59, 130, 246, 0);
+  }
+}
+
+/* Phone rotation/shake */
+@keyframes phone-shake {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-15deg);
+  }
+
+  75% {
+    transform: rotate(15deg);
+  }
+}
+
+/* Video pulse animation */
+@keyframes pulse-video {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+/* Shimmer animation for Trusted By button */
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Glow Divider Animation */
+@keyframes glow-line {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+/* Scanner Animation */
+@keyframes scanner {
+  0%,
+  100% {
+    left: 0%;
+  }
+
+  50% {
+    left: 100%;
+  }
+}
+
+@layer utilities {
+  .animate-scroll-left {
+    animation: scroll-left 40s linear infinite;
+  }
+
+  /* 3D Transform Utilities */
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  /* Technical Blueprint Grid Pattern */
+  .bg-tech-blueprint {
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 0
+    );
+    background-size: 20px 20px;
+  }
+
+  /* Cyber-Nexus Footer Utilities */
+  .footer-aura {
+    background: radial-gradient(
+      circle at 50% 50%,
+      rgba(0, 71, 171, 0.15),
+      transparent 70%
+    );
+    animation: aura-pulse 8s ease-in-out infinite;
+  }
+
+  @keyframes aura-pulse {
+    0%,
+    100% {
+      opacity: 0.5;
+      transform: scale(1) translate(-50%, 0);
+    }
+
+    50% {
+      opacity: 0.8;
+      transform: scale(1.1) translate(-50%, -10px);
+    }
+  }
+
+  .watermark-text {
+    font-size: clamp(5rem, 15vw, 12rem);
+    line-height: 0.8;
+    letter-spacing: -0.05em;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.03);
+    color: transparent;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .footer-grid-line {
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    );
+    background-size: 40px 100%;
+  }
+
+  /* Liquid Gooey Filter for Navbar/UI */
+  .filter-gooey {
+    filter: url("#gooey");
+  }
+
+  /* --- CENTRALIZED TYPOGRAPHY --- */
+  .typo-heading {
+    @apply text-2xl md:text-3xl lg:text-4xl font-black text-white tracking-[0.1em] leading-none uppercase;
+  }
+
+  .typo-section {
+    @apply text-xl md:text-2xl lg:text-3xl font-black text-white tracking-[0.1em] uppercase;
+  }
+
+  .typo-subsection {
+    @apply text-lg md:text-xl lg:text-lg font-black text-black tracking-[0.02em] uppercase;
+  }
+
+  .typo-subsection-white {
+    @apply text-lg md:text-xl lg:text-lg font-black text-white tracking-[0.02em] uppercase;
+  }
+
+  .typo-tab-heading {
+    @apply text-xs md:text-sm font-black uppercase tracking-[0.2em] text-white;
+  }
+
+  .typo-body {
+    @apply text-sm md:text-base text-white font-medium leading-relaxed;
+  }
+
+  .typo-body-bold {
+    @apply text-sm md:text-base text-white font-bold leading-relaxed;
+  }
+
+  .typo-label {
+    @apply text-[12px] font-bold uppercase tracking-[0.2em] text-white/80;
+  }
+
+  /* --- CONSISTENCY SIZING --- */
+  .icon-box-lg {
+    @apply w-16 h-16 shrink-0 rounded-2xl flex items-center justify-center transition-all duration-500 bg-white/[0.03] border border-white/5;
+  }
+
+  .icon-box-md {
+    @apply w-12 h-12 shrink-0 rounded-xl flex items-center justify-center transition-all duration-500 bg-white/[0.03] border border-white/5;
+  }
+
+  .icon-box-sm {
+    @apply w-10 h-10 shrink-0 rounded-lg flex items-center justify-center transition-all duration-500 bg-white/[0.03] border border-white/5;
+  }
+
+  /* --- PAGE LAYOUT --- */
+  .page-center-layout {
+    @apply flex flex-col justify-center min-h-screen py-12;
+  }
+}
+
+/* SVG Filter Definitions - hidden but globally accessible */
+.svg-filters {
+  position: absolute;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+/* ===== FORCE ANIMATIONS ON ALL DEVICES =====
+   Some laptops have "Reduce Motion" enabled in OS settings.
+   This override ensures hover effects and animations always work.
+*/
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Override: keep our intentional animations alive regardless */
+.animate-ripple-cyan,
+.animate-ripple-orange,
+.animate-ripple-cyan-minimal,
+.animate-ripple-green,
+.animate-scroll-left,
+.footer-aura,
+[class*="animate-"] {
+  animation-play-state: running !important;
+}
+
+/* GPU acceleration for smoother hover & motion effects */
+[class*="hover:"],
+[class*="transition"],
+[class*="motion"] {
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}

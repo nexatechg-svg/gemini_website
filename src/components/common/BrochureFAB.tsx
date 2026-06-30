@@ -108,7 +108,9 @@ const BrochureFAB = () => {
     let idleId: any;
 
     if (typeof window !== "undefined" && "requestIdleCallback" in window) {
-      idleId = (window as any).requestIdleCallback(delayBuild, { timeout: 3000 });
+      idleId = (window as any).requestIdleCallback(delayBuild, {
+        timeout: 3000,
+      });
     } else {
       idleId = setTimeout(delayBuild, 3000);
     }
