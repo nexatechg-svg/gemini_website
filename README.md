@@ -1,7 +1,5 @@
 # Gemini Nexatech Website
 
-![Gemini Nexatech Logo]
-
 ## 🚀 Where Ideas Meet Innovation
 
 **Gemini Nexatech** is a premium, high-performance business website showcasing future-ready smart technology solutions. This project features immersive animations, a professional dark-themed aesthetic, and a fully responsive design tailored for the modern tech industry.
